@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Валентинка 💘</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #ffe6f0;
+            margin-top: 100px;
+        }
+
+        h1 {
+            color: #d63384;
+        }
+
+        button {
+            font-size: 24px;
+            padding: 15px 30px;
+            margin: 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        #yes {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        #no {
+            background-color: #adb5bd;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Ти будеш моєю валентинкою? 💕</h1>
+
+    <button id="yes">Так ❤️</button>
+    <button id="no">Ні 💔</button>
+
+    <script>
+        let yesScale = 1;
+        let noScale = 1;
+
+        document.getElementById("no").onclick = function () {
+            yesScale += 0.2;
+            noScale -= 0.1;
+
+            if (noScale < 0.3) noScale = 0.3;
+
+            document.getElementById("yes").style.transform = `scale(${yesScale})`;
+            document.getElementById("no").style.transform = `scale(${noScale})`;
+        };
+
+        document.getElementById("yes").onclick = function () {
+            alert("Урааа! 💖💖💖");
+        };
+    </script>
+
+</body>
+</html>
